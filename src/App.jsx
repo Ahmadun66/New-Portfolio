@@ -5,6 +5,7 @@ import Firstload from "./components/firstload/Firstload";
 import AnimatedCursor from "react-animated-cursor";
 
 import { useEffect, useState } from "react";
+
 function App() {
   const [firstload, setfirstload] = useState(true);
 

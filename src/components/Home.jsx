@@ -58,8 +58,7 @@ function Home() {
               </a>
             </div>
           </div>
-          <motion.div
-           className="md-w-full w-1/2 flex justify-center items-center">
+          <motion.div className="md-w-full w-1/2 flex justify-center items-center">
             <img src={bgroler} className="absolute w-[600px] z-0" alt="" />
             <Tilt
               options={defaultOptions}
