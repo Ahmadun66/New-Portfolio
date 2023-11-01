@@ -55,7 +55,16 @@ function Chatbot(chatactivate) {
     setchat([...chat, datadata])
     setdatadata('') 
   }
-  console.log(chat);
+  
+  const but11 = () => {
+    setdatadata('imut')
+  }
+  const but22 = () => {
+    setdatadata('con')
+  }
+  const but33 = () => {
+    setdatadata('loh')
+  }
 
   return (
     <div className="w-ful h-full  bg-transparent ">
@@ -74,16 +83,17 @@ function Chatbot(chatactivate) {
       <div className="w-full h-5/6 px-2 text-sm  pt-1 bgglass gap-y-4 chatover">
         {data.map((d, i) => (
           <div         
-            key={i}
-            
+            key={i}            
             ref={(el) => (lah[i] = el)}
           >
             <p className="bg-black text-white  rounded-e-xl rounded-bl-xl mt-2 p-2 w-fit">{d.text}</p>
           </div>
         ))}
-        <button ref={but1}  className="bg-black text-white  rounded-e-xl rounded-bl-xl mt-2 p-2 w-fit">I'm interested in you</button>
-        <button ref={but2} className="bg-black text-white  rounded-e-xl rounded-bl-xl mt-2 p-2 w-fit">I'm interested in you</button>
-        <button ref={but3} className="bg-black text-white  rounded-e-xl rounded-bl-xl mt-2 p-2 w-fit">I'm interested in you</button>
+        <div className="flex flex-col">
+        <button ref={but1} onClick={but11} className="bg-green-600 text-white  rounded-xl  mt-2 p-2 w-fit">Im interested in you</button>
+        <button ref={but2} onClick={but22}  className="bg-green-600 text-white  rounded-xl  mt-2 p-2 w-fit">I need your contact</button>
+        <button ref={but3} onClick={but33}  className="bg-green-600 text-white  rounded-xl  mt-2 p-2 w-fit">Say Hello!</button>
+        </div>
         {chat.map((d, i) => (
            <div         
            key={i}
