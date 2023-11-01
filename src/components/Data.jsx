@@ -91,7 +91,7 @@ export const mobileapp = [
     Title: "https://play.google.com/store/apps/details?id=com.dealaja.prod",
     img: travelmobile,
     judul: "Dealaja App",
-    tek: [<FaReact style={{ marginRight: "20px" }} />, <FaNodeJs />],
+    tek: [<FaReact className="bg-slate-900 p-1" />, <FaNodeJs className="bg-slate-900 p-1 h-10"   />],
     tgl: "Januari, 2023",
 
   },

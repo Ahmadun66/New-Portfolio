@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import DOTS from "vanta/dist/vanta.dots.min.js";
-import coba from "../assets/coba.jpg";
 import { webapp, mobileapp } from "./Data.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { SiFirebase } from "react-icons/si";
 import gsap from "gsap";
-import { Link } from "react-router-dom";
 import { BsLaptop } from "react-icons/bs";
-import { FiSmartphone  } from "react-icons/fi";
+import { FiSmartphone } from "react-icons/fi";
 
 const Work = () => {
   const [usethis, setusethis] = useState(0);
+  const [datanya, setdatanya] = useState([]);
+  const [setactivate, setsetactivate] = useState(false);
+  const [req, setreq] = useState("web");
   const myref = useRef(null);
 
   useEffect(() => {
@@ -35,7 +35,21 @@ const Work = () => {
         })
       );
     }
-  }, [usethis]);
+
+    switch (req) {
+      case "web":
+        setdatanya(webapp);
+        setsetactivate(false);
+        break;
+      case "ip":
+        setdatanya(mobileapp);
+        setsetactivate(true);
+        break;
+      default:
+        setdatanya(webapp);
+        break;
+    }
+  }, [usethis, req]);
 
   const mouseenter = (e) => {
     gsap.to(e.current, {
@@ -63,16 +77,31 @@ const Work = () => {
           <h2 className=" font-poppins text-7xl ">Work Section</h2>
         </div>
         <div className="w-full flex h-full justify-center items-center">
-          <div className="w-2/12 flex justify-center ">
-            <p className="text-white p-5 bg-black">
+          <div
+            className={`w-2/12 flex flex-col gap-28 items-center justify-start`}
+            onClick={() => setreq("web")}
+          >
+            <p
+              className={` p-5 bg-black duration-500 ${
+                setactivate
+                  ? "text-white"
+                  : "bg-white text-black border-2 border-slate-900 "
+              }`}
+            >
               <BsLaptop />
             </p>
+            <h6
+              className="font-poppins text-5xl tracking-wide"
+              style={{ transform: "Rotate(90deg)" }}
+            >
+              Dekstop
+            </h6>
           </div>
           <div className="w-8/12 h-full grid grid-cols-3 gap-2 gap-y-6 text-center font-inter ">
-            {webapp.map((data, i) => (
+            {datanya.map((data, i) => (
               <div
                 key={i}
-                className="relative w-full h-72 p-1 rounded-md  shadow-lg  bg-slate-800   "
+                className="relative w-full h-72  rounded-md  shadow-lg  bg-slate-800   "
                 data-aos="fade-left"
                 data-aos-delay={i * 200}
                 data-aos-once={true}
@@ -89,8 +118,7 @@ const Work = () => {
                     className="opacity-0 w-full h-full flex justify-center items-center bg-slate-800 bg-opacity-80 text-white font-medium duration-500 hover:opacity-100"
                     href={data.Title}
                   >
-                    {" "}
-                    View Site{" "}
+                    View Site
                   </a>
                 </div>
                 <div className="absolute z-0 w-full bottom-4 flex  items-center ">
@@ -104,10 +132,25 @@ const Work = () => {
               </div>
             ))}
           </div>
-          <div className="w-2/12 flex justify-center ">
-            <p className="text-white p-5 bg-black">
-              <FiSmartphone  />
+          <div
+            className="w-2/12 flex flex-col gap-28 items-center justify-start"
+            onClick={() => setreq("ip")}
+          >
+            <p
+              className={` p-5 duration-500 bg-black ${
+                setactivate
+                  ? "bg-white text-black border-2 border-slate-900 "
+                  : "text-white"
+              }`}
+            >
+              <FiSmartphone />
             </p>
+            <h6
+              className="font-poppins text-5xl tracking-wide"
+              style={{ transform: "Rotate(90deg)" }}
+            >
+              Mobile
+            </h6>
           </div>
         </div>
       </div>

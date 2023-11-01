@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   --cursor-color: rgb(0, 0, 0);
 }
-
 
 body {
   margin: 0;
@@ -55,26 +53,26 @@ body {
   color: rgb(43, 43, 43);
 }
 
-.but{
+.but {
   --c: rgb(17, 17, 17);
   color: var(--c);
   font-size: 23px;
   border: 1px solid var(--c);
   border-radius: 0.5em;
   width: 6em;
-  height:3rem;
+  height: 3rem;
   text-transform: uppercase;
   font-weight: bold;
-  
-   text-align: center;
-  line-height: 2.0em;
+
+  text-align: center;
+  line-height: 2em;
   position: relative;
   overflow: hidden;
   z-index: 1;
   transition: 0.5s;
   margin: 1em;
 }
-.but span{
+.but span {
   position: absolute;
   width: 25%;
   height: 100%;
@@ -86,7 +84,7 @@ body {
   transition-delay: calc((var(--n) - 1) * 0.1s);
   z-index: -1;
 }
-.but:hover{
+.but:hover {
   color: rgb(249, 249, 249);
 }
 .but:hover span {
@@ -125,21 +123,15 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: 
-	  opacity 0.2s ease-in-out,
-		visibility 0.2s ease-in-out,
-		-webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-	-moz-transition:    
-		opacity 0.2s ease-in-out,
-		visibility 0.2s ease-in-out,
-		-moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
-	transition:         
-		opacity 0.2s ease-in-out,
-		visibility 0.2s ease-in-out,
-		transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+    -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+    -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+    transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
   -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform:    translate3d(0, 0, 0);
-  transform:         translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   pointer-events: none;
 }
 
@@ -177,9 +169,7 @@ body {
   color: rgb(12, 12, 12);
   content: attr(data-tooltip);
   font-size: 12px;
-
 }
-
 
 /* Right */
 .tooltip-right:before,
@@ -189,7 +179,6 @@ body {
 }
 
 .tooltip-right:before {
-
   margin-left: -12px;
   border-top-color: transparent;
   border-right-color: #000;
@@ -225,12 +214,32 @@ body {
 
 /* button section end*/
 
-
-.shadow-box{
-
+.shadow-box {
   cursor: pointer;
   transition: 0.2s;
 }
-.bgcursor{
+.bgcursor {
   background-color: rgb(15, 50, 80);
+}
+.chatover {
+  overflow-y: scroll;
+  flex: 1;
+ 
+}
+.chatover::-webkit-scrollbar {
+  display: none;
+}
+.bgglass {
+ /* From https://css.glass */
+ background: rgba(199, 199, 199, 0.74);
+
+ backdrop-filter: blur(17.9px);
+ -webkit-backdrop-filter: blur(17.9px);
+}
+.glassbawah{
+ /* From https://css.glass */
+background: rgba(199, 199, 199, 0.74);
+
+backdrop-filter: blur(17.9px);
+-webkit-backdrop-filter: blur(17.9px);
 }
