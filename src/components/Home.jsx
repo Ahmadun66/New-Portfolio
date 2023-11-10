@@ -7,7 +7,7 @@ import { IoIosArrowDropright } from "react-icons/io";
 import cv from "../assets/aji.pdf";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home({openchat}) {
   const defaultOptions = {
     reverse: false, // reverse the tilt direction
     max: 35, // max tilt rotation (degrees)
@@ -38,16 +38,15 @@ function Home() {
               Full Stack Developer selama satu tahun.
             </p>
             <div className="flex items-center">
-              <Link
+              <a href="mailto:zulfikarajisan@gmail.com" 
                 type="button"
-                to="/contact"
                 className="warna but text-decoration-none"
               >
                 Hire me
                 <span></span>
                 <span></span>
                 <span></span> <span></span>
-              </Link>
+              </a>
               <a
                 href={cv}
                 download

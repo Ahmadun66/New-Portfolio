@@ -43,14 +43,16 @@ function App() {
     });
   };
 
+
+
   return (
     <Router>
       <div className="fixed duration-500 bottom-20 z-20 flex flex-col gap-y-2 items-end right-20 overflow-hidden ">
         <div
           ref={icon}
-          className={`mb-16 w-72 h-[500px] ${chatactivate ? '' : 'hidden'} `}
+          className={`mb-9 w-72 h-[500px] ${chatactivate ? '' : 'hidden'} `}
         >
-          <Chatbot  chatactivate={chatactivate} />
+          <Chatbot  chatactivate={chatactivate}  />
         </div>
 
         <button
@@ -97,10 +99,10 @@ function App() {
           },
         ]}
       /> */}
-      <Atas />
+      <Atas openchat={chatactivate ? mouseleave : mouseenter}  />
 
      
-      <Pagetransitions />
+      <Pagetransitions  openchat={chatactivate ? mouseleave : mouseenter}  />
     </Router>
   );
 }

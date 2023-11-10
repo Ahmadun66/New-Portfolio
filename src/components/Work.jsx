@@ -69,7 +69,7 @@ const Work = () => {
 
   return (
     <>
-      <div className="w-full h-screen ">
+      <div className="w-full h-screen scrollhide">
         <div
           ref={myref}
           className="w-full h-2/3 flex justify-center items-center"

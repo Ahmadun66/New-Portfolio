@@ -243,3 +243,11 @@ background: rgba(199, 199, 199, 0.74);
 backdrop-filter: blur(17.9px);
 -webkit-backdrop-filter: blur(17.9px);
 }
+/* 
+.scrollhide{
+overflow-y:scroll ;
+} */
+
+/* .scrollhide::-webkit-scrollbar{
+  width: 1px;
+} */
