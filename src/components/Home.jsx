@@ -15,14 +15,15 @@ function Home({openchat}) {
 
   return (
     <>
-      <div className="w-full h-screen flex justify-center items-center ">
-        <div className="w-full flex h-5/6 mx-10  flex-nowrap">
-          <div className="m-5  w-1/2 flex items-start flex-col justify-center">
-            <h1 className="font-poppins text-9xl mb-10">
-              Zulfikar Aji Santoso
+      <div className="w-full h-screen flex justify-center items-center  ">
+        <div className="w-full flex h-5/6 mx-10 flex-col md:flex-row">
+          <div className="w-full md:w-1/2 flex items-start text-center md:text-start flex-col justify-center ">
+            <h1 className="font-poppins w-full text-2xl md:text-9xl mb-10 mt-10 md:mt-0">
+              Zulfikar Aji Santoso 
             </h1>
+            <div className="w-full  mb-10">
             <Typed
-              className="font-poppins text-3xl font-thin mb-10 "
+              className="font-poppins text-1xl  md:text-3xl font-thin "
               strings={[
                 "Fullstack Developer",
                 "Web Developer",
@@ -32,12 +33,11 @@ function Home({openchat}) {
               typeSpeed={40}
               loop={true}
             />
-            <p className="w-3/4">
-              Nama saya Zulfikar Aji Santoso berdomisili di Yogyakarta. Saya
-              telah menjadi seorang Front End Developer selama 2 tahun dan juga
-              Full Stack Developer selama satu tahun.
+            </div>
+            <p className="w-full md:w-3/4 ">
+              Saya adalah seorang software developer dengan pengalaman 2 tahun lebih membuat sistem berbasis website dan mobile 
             </p>
-            <div className="flex items-center">
+            <div className="flex items-center w-full justify-center md:justify-start">
               <a href="mailto:zulfikarajisan@gmail.com" 
                 type="button"
                 className="warna but text-decoration-none"
@@ -47,7 +47,7 @@ function Home({openchat}) {
                 <span></span>
                 <span></span> <span></span>
               </a>
-              <a
+              <a 
                 href={cv}
                 download
                 className="text-4xl tooltip-right text-black"
@@ -57,7 +57,7 @@ function Home({openchat}) {
               </a>
             </div>
           </div>
-          <motion.div className="md-w-full w-1/2 flex justify-center items-center">
+          <motion.div className=" w-full md:w-1/2 flex justify-center items-center">
             <img src={bgroler} className="absolute w-[600px] z-0" alt="" />
             <Tilt
               options={defaultOptions}

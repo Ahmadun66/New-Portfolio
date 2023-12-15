@@ -4,12 +4,10 @@ import gsap from "gsap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import {FaSquareInstagram} from "react-icons/fa6"
+import { FaSquareInstagram } from "react-icons/fa6";
 import { AiFillLinkedin, AiTwotoneMail } from "react-icons/ai";
 
 function Chatbot(chatactivate) {
-  const [datadata, setdatadata] = useState("");
-  const [chat, setchat] = useState([]);
   const [balasan, setbalasan] = useState([]);
   const lah = useRef([]);
   const but1 = useRef();
@@ -24,7 +22,7 @@ function Chatbot(chatactivate) {
     },
     {
       id: 2,
-      text: "Welcome To Botji 😁",
+      text: "Welcome to SimpleBot 😁",
     },
     {
       id: 3,
@@ -33,7 +31,6 @@ function Chatbot(chatactivate) {
   ];
 
   useEffect(() => {
-    
     gsap
       .timeline({ paused: false })
       .from(lah[0], { y: 30, duration: 0.1, opacity: 0 })
@@ -48,7 +45,7 @@ function Chatbot(chatactivate) {
       .to(but1.current, { y: 0, duration: 0.1, opacity: 1 })
       .to(but2.current, { y: 0, duration: 0.1, opacity: 1 })
       .to(but3.current, { y: 0, duration: 0.1, opacity: 1 });
-      scrollauto.current?.scrollIntoView()  
+    scrollauto.current?.scrollIntoView();
   }, [chatactivate]);
 
   useEffect(() => {
@@ -56,36 +53,36 @@ function Chatbot(chatactivate) {
     AOS.init({
       once: false,
     });
-    
-      
-      if (balasan[last]?.message.toLowerCase() === "interested") {
-        const data = { type: "bot", message: "Thank you for being interested in me 🙌" };
-        const data2 = { type: "bot", message: "e" };
-        balasan.push(data);
-        balasan.push(data2);
-        scrollauto.current?.scrollIntoView()  
-      }
-      else if (balasan[last]?.message.toLowerCase() === "contact?") {
-        const data = { type: "bot", message: "Oh you want to know my contact? " };
-        const data2 = { type: "user", message: "Instagram?" };
-        const data3 = { type: "user", message: "Lindkedin?" };
-        balasan.push(data);
-        balasan.push(data2);
-        balasan.push(data3);
-        scrollauto.current?.scrollIntoView()  
-      }
-      else if (balasan[last]?.message.toLowerCase() === "hello") {
-        const data = { type: "bot", message: "Hello, Nice to Meet You 😁 " };
-        const data2 = { type: "bot", message: "Hope you enjoy on my website 🛫" };
-        balasan.push(data);
-        balasan.push(data2);
-        scrollauto.current?.scrollIntoView()  
-      }
-      setTimeout(() => {        
-        setloading(false);
-      }, 2200);
 
-    scrollauto.current?.scrollIntoView()  
+    if (balasan[last]?.message.toLowerCase() === "interested") {
+      const data = {
+        type: "bot",
+        message: "Thank you for being interested in me 🙌",
+      };
+      const data2 = { type: "bot", message: "e" };
+      balasan.push(data);
+      balasan.push(data2);
+      scrollauto.current?.scrollIntoView();
+    } else if (balasan[last]?.message.toLowerCase() === "contact?") {
+      const data = { type: "bot", message: "Oh you want to know my contact? " };
+      const data2 = { type: "user", message: "Instagram?" };
+      const data3 = { type: "user", message: "Lindkedin?" };
+      balasan.push(data);
+      balasan.push(data2);
+      balasan.push(data3);
+      scrollauto.current?.scrollIntoView();
+    } else if (balasan[last]?.message.toLowerCase() === "hello") {
+      const data = { type: "bot", message: "Hello, Nice to Meet You 😁 " };
+      const data2 = { type: "bot", message: "Hope you enjoy on my website 🛫" };
+      balasan.push(data);
+      balasan.push(data2);
+      scrollauto.current?.scrollIntoView();
+    }
+    setTimeout(() => {
+      setloading(false);
+    }, 2200);
+
+    scrollauto.current?.scrollIntoView();
     console.log(balasan);
   }, [loading, balasan]);
 
@@ -109,7 +106,6 @@ function Chatbot(chatactivate) {
       ...prevChatLog,
       { type: "user", message: "hello" },
     ]);
-
   };
 
   const ig = () => {
@@ -121,7 +117,7 @@ function Chatbot(chatactivate) {
       ]);
       setloading(false);
     }, 2200);
-  }
+  };
 
   const lindkedin = () => {
     setloading(true);
@@ -131,13 +127,11 @@ function Chatbot(chatactivate) {
         { type: "bot", read: "li", message: "li" },
       ]);
       setloading(false);
-  
     }, 2200);
-    
-  }
+  };
   const clearstate = () => {
-     setbalasan([])
-  }
+    setbalasan([]);
+  };
 
   return (
     <div className="w-full h-full  bg-transparent ">
@@ -223,26 +217,51 @@ function Chatbot(chatactivate) {
                   : "bg-white text-black  rounded-s-md rounded-br-md mt-2 p-2 w-fit"
               }`}
             >
-              {d.message === "e" && <><AiTwotoneMail className=" w-full" /> <a  href="mailto:zulfikarajisan@gmail.com" className="">Email M</a></> }
-              {d.message === "Instagram?" || d.message === "Lindkedin?"  ? (
+              {d.message === "e" && (
                 <>
-                  <button onClick={d.message === "Instagram?"? ig : lindkedin }>{d.message}</button>
+                  <AiTwotoneMail className=" w-full" />{" "}
+                  <a href="mailto:zulfikarajisan@gmail.com" className="">
+                    Email M
+                  </a>
                 </>
-              ): (
-                
-                <>{d.read ? '' : d.message}
-                {d.read === "ig" && (<Link to={'https://www.instagram.com/laperrman/'} className="flex items-center"><FaSquareInstagram /> <span className="ml-1"> Instagram</span> </Link>)}
-                {d.read === "li" && (<Link to={'https://www.linkedin.com/in/zulfikar-aji-santoso-504a08221/'} className="flex items-center"><AiFillLinkedin /> <span className="ml-1"> Lindkedin</span> </Link>)}</>
               )}
-       
+              {d.message === "Instagram?" || d.message === "Lindkedin?" ? (
+                <>
+                  <button onClick={d.message === "Instagram?" ? ig : lindkedin}>
+                    {d.message}
+                  </button>
+                </>
+              ) : (
+                <>
+                  {d.read ? "" : d.message}
+                  {d.read === "ig" && (
+                    <Link
+                      to={"https://www.instagram.com/laperrman/"}
+                      className="flex items-center"
+                    >
+                      <FaSquareInstagram />{" "}
+                      <span className="ml-1"> Instagram</span>{" "}
+                    </Link>
+                  )}
+                  {d.read === "li" && (
+                    <Link
+                      to={
+                        "https://www.linkedin.com/in/zulfikar-aji-santoso-504a08221/"
+                      }
+                      className="flex items-center"
+                    >
+                      <AiFillLinkedin />{" "}
+                      <span className="ml-1"> Lindkedin</span>{" "}
+                    </Link>
+                  )}
+                </>
+              )}
             </p>
           </div>
         ))}
         {loading && (
           <div className="bg-black mb-2 text-white gap-2 px-2 py-0  rounded-e-md rounded-bl-md pb-2  w-fit flex">
-            <div data-aos="fade-bottom">
-              .
-            </div>
+            <div data-aos="fade-bottom">.</div>
             <div data-aos="fade-bottom" data-aos-delay={400}>
               .
             </div>
@@ -258,11 +277,25 @@ function Chatbot(chatactivate) {
 
         <div ref={scrollauto} />
       </div>
-      <button onClick={clearstate} type="button" className="w-full h-17 bg-green-800 font-medium text-white flex gap-2 justify-center  py-2 rounded-b-2xl">
-          Clear 
-      </button>
+      {balasan.length > 0 ? (
+        <button
+          onClick={clearstate}
+          type="button"
+          className="w-full h-17 bg-green-800 font-medium text-white flex gap-2 justify-center  py-2 rounded-b-2xl"
+        >
+          Clear
+        </button>
+      ) : (
+        <button
+          type="button"
+          className="w-full h-17 bg-black font-medium text-white flex gap-2 justify-center  py-2 rounded-b-2xl"
+        >
+          Enjoy!!😁
+        </button>
+      )}
+
       {/* <div className="w-full h-17 flex gap-2 justify-center glassbawah py-2 rounded-b-2xl "> */}
-        {/* <input
+      {/* <input
           type="text"
           placeholder="any questions?"
           value={datadata}
@@ -272,7 +305,7 @@ function Chatbot(chatactivate) {
         <button onClick={send} className="text-black font-poppins ">
           Send
         </button> */}
-        
+
       {/* </div> */}
     </div>
   );

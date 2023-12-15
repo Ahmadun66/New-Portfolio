@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setfirstload(false);
-    }, 3000);
+    },3000);
   }, [chatactivate]);
 
   const mouseenter = () => {
@@ -43,66 +43,31 @@ function App() {
     });
   };
 
-
-
   return (
     <Router>
-      <div className="fixed duration-500 bottom-20 z-20 flex flex-col gap-y-2 items-end right-20 overflow-hidden ">
+      <div className="fixed duration-500 bottom-6 md:bottom-20 z-20 flex flex-col gap-y-2 items-end right-6 md:right-20 overflow-hidden ">
         <div
           ref={icon}
-          className={`mb-9 w-72 h-[500px] ${chatactivate ? '' : 'hidden'} `}
+          className={` mb-9 w-72 h-[500px] ${chatactivate ? "" : "hidden"} `}
         >
-          <Chatbot  chatactivate={chatactivate}  />
+          <Chatbot chatactivate={chatactivate} />
         </div>
 
         <button
-          onClick={chatactivate ?  mouseleave : mouseenter}
+          onClick={chatactivate ? mouseleave : mouseenter}
           className={`duration-500 bg-black w-12 h-12 text-white flex items-center justify-center text-lg rounded-full`}
         >
-          {chatactivate ? <MdCancelScheduleSend /> : <SiChatbot />  }
+          {chatactivate ? <MdCancelScheduleSend /> : <SiChatbot />}
         </button>
       </div>
-      {firstload && <Firstload />}
-      {/* <AnimatedCursor
-        innerStyle={{
-          backgroundColor: "var(--cursor-color)",
-        }}
-        trailingSpeed={0.2}
-        innerSize={8}
-        outerSize={10}
-        color="0, 0, 0"
-        outerAlpha={0.2}
-        innerScale={0.7}
-        outerScale={5}
-        clickables={[
-          "a",
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          "label[for]",
-          "select",
-          "textarea",
-          "button",
-          ".link",
-          {
-            target: ".custom",
-            options: {
-              innerSize: 12,
-              outerSize: 12,
-              color: "255, 255, 255",
-              outerAlpha: 0.3,
-              innerScale: 0.7,
-              outerScale: 5,
-            },
-          },
-        ]}
-      /> */}
-      <Atas openchat={chatactivate ? mouseleave : mouseenter}  />
+      <Atas openchat={chatactivate ? mouseleave : mouseenter} />
+      {firstload ? (
+        <Firstload />
+      ) : (
+        <Pagetransitions openchat={chatactivate ? mouseleave : mouseenter} />
+      )}
 
      
-      <Pagetransitions  openchat={chatactivate ? mouseleave : mouseenter}  />
     </Router>
   );
 }

@@ -222,11 +222,13 @@ body {
   background-color: rgb(15, 50, 80);
 }
 .chatover {
+
   overflow-y: scroll;
   flex: 1;
  
 }
 .chatover::-webkit-scrollbar {
+  position: absolute;
   display: none;
 }
 .bgglass {
@@ -251,3 +253,6 @@ overflow-y:scroll ;
 /* .scrollhide::-webkit-scrollbar{
   width: 1px;
 } */
+.icon{
+  border-radius: 50%;
+}

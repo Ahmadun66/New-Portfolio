@@ -74,15 +74,15 @@ const Work = () => {
           ref={myref}
           className="w-full h-2/3 flex justify-center items-center"
         >
-          <h2 className=" font-poppins text-7xl ">Work Section</h2>
+          <h2 className=" font-poppins text-4xl md:text-7xl ">Work Section</h2>
         </div>
         <div className="w-full flex h-full justify-center items-center">
           <div
-            className={`w-2/12 flex flex-col gap-28 items-center justify-start`}
+            className={`w-2/12 flex flex-col gap-28 items-center justify-start cursor-pointer`}
             onClick={() => setreq("web")}
           >
             <p
-              className={` p-5 bg-black duration-500 ${
+              className={` p-3 md:p-5 bg-black duration-500 ${
                 setactivate
                   ? "text-white"
                   : "bg-white text-black border-2 border-slate-900 "
@@ -91,13 +91,13 @@ const Work = () => {
               <BsLaptop />
             </p>
             <h6
-              className="font-poppins text-5xl tracking-wide"
+              className="font-poppins text-3xl md:text-5xl tracking-wide "
               style={{ transform: "Rotate(90deg)" }}
             >
               Dekstop
             </h6>
           </div>
-          <div className="w-8/12 h-full grid grid-cols-3 gap-2 gap-y-6 text-center font-inter ">
+          <div className="w-8/12 h-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 gap-y-6 text-center font-inter ">
             {datanya.map((data, i) => (
               <div
                 key={i}
@@ -133,11 +133,11 @@ const Work = () => {
             ))}
           </div>
           <div
-            className="w-2/12 flex flex-col gap-28 items-center justify-start"
+            className="w-2/12 flex flex-col gap-28 items-center justify-start cursor-pointer"
             onClick={() => setreq("ip")}
           >
             <p
-              className={` p-5 duration-500 bg-black ${
+              className={`p-3 md:p-5 duration-500 bg-black ${
                 setactivate
                   ? "bg-white text-black border-2 border-slate-900 "
                   : "text-white"
@@ -146,7 +146,7 @@ const Work = () => {
               <FiSmartphone />
             </p>
             <h6
-              className="font-poppins text-5xl tracking-wide"
+              className="font-poppins text-3xl md:text-5xl tracking-wide "
               style={{ transform: "Rotate(90deg)" }}
             >
               Mobile
@@ -167,7 +167,7 @@ const Work = () => {
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}
-        transition={{ duration: 1, ease: [0, 1, 0.5, 1] }}
+        transition={{ duration: 1, ease: [0.7, 0.1, 0.5, 1] }}
       ></motion.div>
     </>
   );

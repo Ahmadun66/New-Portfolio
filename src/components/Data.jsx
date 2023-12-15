@@ -7,11 +7,10 @@ import { AiOutlineHtml5 } from "react-icons/ai";
 import { DiJavascript1 } from "react-icons/di";
 import port1 from "../assets/port2.jpg";
 import port from "../assets/port.jpg";
-
+import { SiMysql, SiMongodb  } from "react-icons/si";
 import travel from "../assets/travel.jpg";
 import ecomm from "../assets/ecomwithadmin.jpg";
 import ig from "../assets/ig.png";
-import kuis from "../assets/kuis.png";
 import wa from "../assets/wa.png";
 import travelmobile from "../assets/travelmobile.png";
 
@@ -40,7 +39,7 @@ export const webapp = [
     Title: "https://storaja.netlify.app/",
     img: ecomm,
     judul: "Ecommerce with Admin",
-    tek: [<FaReact className="bg-slate-900 p-1"  />, <FaLaravel className="bg-slate-900 p-1 h-10"  />],
+    tek: [<FaReact className="bg-slate-900 p-1"  />, <FaLaravel className="bg-slate-900 p-1 h-10"  />, <SiMysql className="bg-slate-900 p-1 "  />],
     tgl: "Nov, 2021",
   
   },
@@ -49,22 +48,11 @@ export const webapp = [
     Title: "https://jalantravel.netlify.app/",
     img: travel,
     judul: "Travel with Admin",
-    tek: [<FaReact className="bg-slate-900 p-1"  />, <FaLaravel className="bg-slate-900 p-1 h-10"  />],
+    tek: [<FaReact className="bg-slate-900 p-1"  />, <FaLaravel className="bg-slate-900 p-1 h-10"  />,  <SiMysql className="bg-slate-900 p-1 "  />],
     tgl: "Nov, 2021",
   
   },
-  {
-    id: 5,
-    Title: "https://zulfikarajisantoso.github.io/Quizz-App-JS/",
-    img: kuis,
-    judul: "Quiz App",
-    tek: [
-      <DiJavascript1 className="bg-slate-900 p-1"  />,
-      <AiOutlineHtml5 className="bg-slate-900 p-1 h-10"  />,
-    ],
-    tgl: "Mar, 2022",
-  
-  },
+ 
   {
     id: 6,
     Title: "https://intagram-clonee.web.app/",
@@ -91,7 +79,7 @@ export const mobileapp = [
     Title: "https://play.google.com/store/apps/details?id=com.dealaja.prod",
     img: travelmobile,
     judul: "Dealaja App",
-    tek: [<FaReact className="bg-slate-900 p-1" />, <FaNodeJs className="bg-slate-900 p-1 h-10"   />],
+    tek: [<FaReact className="bg-slate-900 p-1" />, <FaNodeJs className="bg-slate-900 p-1 h-10"   />, <SiMongodb className="bg-slate-900 p-1" />],
     tgl: "Januari, 2023",
 
   },

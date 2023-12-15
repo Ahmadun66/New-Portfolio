@@ -13,9 +13,9 @@ function Firstload() {
   
 
   return (
-    <div className="w-full h-screen text-stone-50 absolute z-10">
+    <div className="w-full h-full overflow-hidden text-stone-50 absolute z-10">
       <div className={`bg-black h-1/2 flex justify-center items-end top-0 duration-1000 ${delay ? 'up' : ''}` }>
-        <h1 className="text-5xl font-poppins">
+        <h1 className="text-3xl md:text-5xl font-poppins">
           <b>Zulfikar Aji Santoso</b>
         </h1>
       </div>
